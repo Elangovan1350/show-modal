@@ -3,6 +3,8 @@ const modal = document.querySelector('.modal');
 const closeModel = document.querySelectorAll('.close');
 const overlay = document.querySelector('.overlay');
 
+
+let hiddenModal = true
 function showModal() {
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
@@ -19,7 +21,7 @@ showButton.forEach(e => {
 closeModel.forEach(e => {
   e.addEventListener('click', removeModal);
 });
-document.body.addEventListener('keyup', e => {
+document.addEventListener('keyup', e => {
   if (e.key === 'Escape') {
     removeModal();
   }
